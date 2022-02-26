@@ -27,6 +27,7 @@ public class ListLab {
         System.out.println(listIntegerB);
         //[100, 110, 123, 12, 12, 10, 10, 11, 11, 200, 300]
 
+        System.out.println( listIntegerA.stream().filter(e -> listIntegerB.contains(e)).collect(Collectors.toList()));
         List<Integer> listIntersectionAyB = listIntegerA.stream().filter(listIntegerB::contains).collect(Collectors.toList());
         System.out.println(listIntersectionAyB);
         //[10, 11, 11, 11]
@@ -37,6 +38,8 @@ public class ListLab {
         List<Integer> listIntersectionByA = listIntegerB.stream().filter(listIntegerA::contains).collect(Collectors.toList());
         System.out.println(listIntersectionByA);
         //[10, 10, 11, 11]
+
+
 
     }
 }
