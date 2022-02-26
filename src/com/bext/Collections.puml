@@ -1,0 +1,59 @@
+@startuml
+
+interface "Iterator<E>"
+interface "ListIterator<E>"
+
+"Iterator<E>" <|.. "ListIterator<E>"
+
+interface "Iterable<E>"
+interface "Collection<E>"
+interface "List<E>"
+interface "Queue<E>"
+interface "Set<E>"
+interface "Dequeue<E>"
+interface "SortedSet<E>"
+interface "NavigableSet<E>"
+
+class "ArrayList<E>"
+class "LinkedList<E>"
+class "Vector<E>"
+class "Stack<E>"
+class "PriorityQueue<E>"
+class "ArrayDeque<E>"
+
+class "TreeSet<E>"
+
+"Iterable<E>" <|.. "Collection<E>"
+"Collection<E>" <|.. "List<E>"
+"Collection<E>" <|.. "Queue<E>"
+"Queue<E>" <|.. "Dequeue<E>"
+"Collection<E>" <|.. "Set<E>"
+"Set<E>" <|.. "SortedSet<E>"
+"SortedSet<E>" <|.. "NavigableSet<E>"
+
+"List<E>" <|-- "ArrayList<E>"
+"List<E>" <|-- "LinkedList<E>"
+"List<E>" <|-- "Vector<E>"
+"Vector<E>" <|.. "Stack<E>"
+
+"Queue<E>" <|-- "PriorityQueue<E>"
+"Dequeue<E>" <|-- "ArrayDeque<E>"
+
+"NavigableSet<E>" <|-- "TreeSet<E>"
+
+interface "Map<K,V>"
+interface "SortedMap<K,V>"
+interface "NavigableMap<K,V>"
+
+class "HashMap<K,V>"
+class "LinkedHashMap<K,V>"
+class "TreeMap<K,V>"
+
+"Map<K,V>" <|.. "SortedMap<K,V>"
+"SortedMap<K,V>" <|.. "NavigableMap<K,V>"
+"Map<K,V>" <|-- "HashMap<K,V>"
+"NavigableMap<K,V>" <|-- "TreeMap<K,V>"
+
+"HashMap<K,V>" <|.. "LinkedHashMap<K,V>"
+"Map<K,V>" <|-- "LinkedHashMap<K,V>"
+@enduml
